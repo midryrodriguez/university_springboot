@@ -24,4 +24,6 @@ public class University {
 
     @Column(name = "created_at", nullable = false)
     private Instant createdAt;
+
+    //Maracuya
 }
