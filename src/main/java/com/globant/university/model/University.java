@@ -17,6 +17,8 @@ public class University {
     @Column(name = "university_id")
     private Integer universityId;
 
+    // COMENTARIO 1
+
     @Column(name = "name", nullable = false, length = 150)
     private String name;
 
