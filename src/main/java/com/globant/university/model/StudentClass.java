@@ -23,7 +23,7 @@ public class StudentClass {
 
     @ManyToOne
     @JoinColumn(name = "class_id", referencedColumnName = "class_id")
-    private Class class1;
+    private Aclass aclass;
 
     @Column(name = "enrolled_at", nullable = false)
     private Instant enrolledAt;

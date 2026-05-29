@@ -16,12 +16,12 @@ public class University {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "university_id")
     private Integer universityId;
-    //comentario conflito
+
     @Column(name = "name", nullable = false, length = 150)
     private String name;
 
     @Column(name = "created_at", nullable = false)
     private Instant createdAt;
 
-    //Maracuya
+
 }
