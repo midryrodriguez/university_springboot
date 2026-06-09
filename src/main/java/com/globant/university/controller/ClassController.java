@@ -1,7 +1,7 @@
 package com.globant.university.controller;
 
-import com.globant.university.model.Aclass;
-import com.globant.university.repository.ClassRepository;
+import com.globant.university.dto.AclassResponseDTO;
+import com.globant.university.service.ClassService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +14,14 @@ import java.util.List;
 @RequestMapping("/api/class")
 public class ClassController {
 
-    private final ClassRepository classRepository;
+    // Inyección de dependencias desde el Repository
+    // private final ClassRepository classRepository;
+
+    // Nueva inyección de dependencias desde el Service
+    private final ClassService classService;
 
     @GetMapping("/getAll")
-    public List<Aclass> getAll(){
-        return classRepository.findAll();
+    public List<AclassResponseDTO> getAll(){
+        return classService.findAll();
     }
 }
