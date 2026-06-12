@@ -12,8 +12,10 @@ public class AclassMapper {
     public static AclassResponseDTO modelToResponseDTO(Aclass aclass) {
         return new AclassResponseDTO(
                 aclass.getClassId(),
-                aclass.getUniversity().getUniversityId(),
-                aclass.getTeacher().getTeacherId(),
+                aclass.getUniversity() != null ? aclass.getUniversity().getUniversityId() : null,
+                aclass.getUniversity() != null ? aclass.getUniversity().getName() : null,
+                aclass.getTeacher() != null ? aclass.getTeacher().getTeacherId() : null,
+                aclass.getTeacher() != null ? aclass.getTeacher().getName() : null,
                 aclass.getName(),
                 aclass.getClassroom(),
                 aclass.getCreatedAt()
