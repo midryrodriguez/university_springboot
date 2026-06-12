@@ -3,6 +3,8 @@ package com.globant.university.mapper;
 import com.globant.university.dto.StudentResponseDTO;
 import com.globant.university.model.Student;
 
+import java.util.List;
+
 public class StudentMapper {
 
     public static StudentResponseDTO modelToResponseDTO(Student student) {
@@ -14,5 +16,9 @@ public class StudentMapper {
                 student.getStudentCode(),
                 student.getCreatedAt()
         );
+    }
+
+    public static List<StudentResponseDTO> listModelToListResponseDTO(List<Student> studentList) {
+        return studentList.stream().map(StudentMapper::modelToResponseDTO).toList();
     }
 }
