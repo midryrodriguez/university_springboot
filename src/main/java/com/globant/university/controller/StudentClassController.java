@@ -1,7 +1,7 @@
 package com.globant.university.controller;
 
-import com.globant.university.model.StudentClass;
-import com.globant.university.repository.StudentClassRepository;
+import com.globant.university.dto.StudentClassResponseDTO;
+import com.globant.university.service.StudentClassService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +14,10 @@ import java.util.List;
 @RequestMapping("/api/student-class")
 public class StudentClassController {
 
-    private final StudentClassRepository studentClassRepository;
+    private final StudentClassService studentClassService;
 
     @GetMapping("/getAll")
-    public List<StudentClass> getAll(){
-        return studentClassRepository.findAll();
+    public List<StudentClassResponseDTO> getAll(){
+        return studentClassService.findAll();
     }
 }
