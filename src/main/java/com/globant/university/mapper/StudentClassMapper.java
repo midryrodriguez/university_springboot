@@ -10,14 +10,15 @@ public class StudentClassMapper {
     public static StudentClassResponseDTO modelToResponseDTO(StudentClass studentClass) {
         return new StudentClassResponseDTO(
                 studentClass.getStudentClassId(),
-                studentClass.getStudent().getStudentId(),
-                studentClass.getAclass().getClassId(),
+                studentClass.getStudent() != null ? studentClass.getStudent().getStudentId() : null,
+                studentClass.getAclass() != null ? studentClass.getAclass().getClassId() : null,
                 studentClass.getEnrolledAt()
         );
     }
 
-
     public static List<StudentClassResponseDTO> listModelToListResponseDTO(List<StudentClass> studentClassList) {
-        return studentClassList.stream().map(StudentClassMapper::modelToResponseDTO).toList();
+        return studentClassList.stream()
+                .map(StudentClassMapper::modelToResponseDTO)
+                .toList();
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class UniversityMapper {
 
-    public static UniversityResponseDTO modelToResponseDTO(University university){
+    public static UniversityResponseDTO modelToResponseDTO(University university) {
         return new UniversityResponseDTO(
                 university.getUniversityId(),
                 university.getName(),
@@ -16,6 +16,8 @@ public class UniversityMapper {
     }
 
     public static List<UniversityResponseDTO> listModelToListResponseDTO(List<University> universityList) {
-        return universityList.stream().map(UniversityMapper::modelToResponseDTO).toList();
+        return universityList.stream()
+                .map(UniversityMapper::modelToResponseDTO)
+                .toList();
     }
 }

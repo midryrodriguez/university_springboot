@@ -10,7 +10,7 @@ public class TeacherMapper {
     public static TeacherResponseDTO modelToResponseDTO(Teacher teacher) {
         return new TeacherResponseDTO(
                 teacher.getTeacherId(),
-                teacher.getUniversity().getUniversityId(),
+                teacher.getUniversity() != null ? teacher.getUniversity().getUniversityId() : null,
                 teacher.getName(),
                 teacher.getTeacherType(),
                 teacher.getBaseSalary(),
@@ -21,6 +21,8 @@ public class TeacherMapper {
     }
 
     public static List<TeacherResponseDTO> listModelToListResponseDTO(List<Teacher> teacherList) {
-        return teacherList.stream().map(TeacherMapper::modelToResponseDTO).toList();
+        return teacherList.stream()
+                .map(TeacherMapper::modelToResponseDTO)
+                .toList();
     }
 }

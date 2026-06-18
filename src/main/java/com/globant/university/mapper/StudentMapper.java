@@ -10,7 +10,7 @@ public class StudentMapper {
     public static StudentResponseDTO modelToResponseDTO(Student student) {
         return new StudentResponseDTO(
                 student.getStudentId(),
-                student.getUniversity().getUniversityId(),
+                student.getUniversity() != null ? student.getUniversity().getUniversityId() : null,
                 student.getName(),
                 student.getAge(),
                 student.getStudentCode(),
@@ -19,6 +19,8 @@ public class StudentMapper {
     }
 
     public static List<StudentResponseDTO> listModelToListResponseDTO(List<Student> studentList) {
-        return studentList.stream().map(StudentMapper::modelToResponseDTO).toList();
+        return studentList.stream()
+                .map(StudentMapper::modelToResponseDTO)
+                .toList();
     }
 }
