@@ -1,10 +1,20 @@
 package com.globant.university.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.Instant;
 
 public record StudentClassResponseDTO(
+
+        @JsonProperty("student_class_id")
         Integer studentClassId,
-        Integer studentId, // Solo el ID
-        Integer classId,   // Solo el ID
+
+        @JsonProperty("student_id")
+        Integer studentId,
+
+        @JsonProperty("class_id")
+        Integer classId,
+
+        @JsonProperty("enrolled_at")
         Instant enrolledAt
 ) {}
