@@ -12,6 +12,9 @@ public record TeacherResponseDTO(
         @JsonProperty("university_id")
         Integer universityId,
 
+        @JsonProperty("University_name")
+        String universityName,
+        
         @JsonProperty("name")
         String name,
 

@@ -1,5 +1,6 @@
 package com.globant.university.service.impl;
 
+import com.globant.university.dto.CreateUniversityRequestDTO;
 import com.globant.university.dto.UniversityResponseDTO;
 import com.globant.university.mapper.UniversityMapper;
 import com.globant.university.model.University;
@@ -20,5 +21,10 @@ public class UniversityServiceImpl implements UniversityService {
     public List<UniversityResponseDTO> findAll() {
         List<University> universities = universityRepository.findAll();
         return UniversityMapper.listModelToListResponseDTO(universities);
+    }
+
+    @Override
+    public UniversityResponseDTO create(CreateUniversityRequestDTO createUniversityResponseDTO) {
+        return null;
     }
 }

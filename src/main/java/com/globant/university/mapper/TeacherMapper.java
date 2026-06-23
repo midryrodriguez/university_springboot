@@ -11,6 +11,7 @@ public class TeacherMapper {
         return new TeacherResponseDTO(
                 teacher.getTeacherId(),
                 teacher.getUniversity() != null ? teacher.getUniversity().getUniversityId() : null,
+                teacher.getUniversity() != null ? teacher.getUniversity().getName() : null,
                 teacher.getName(),
                 teacher.getTeacherType(),
                 teacher.getBaseSalary(),
