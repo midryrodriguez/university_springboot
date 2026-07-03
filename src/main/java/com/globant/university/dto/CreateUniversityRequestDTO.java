@@ -1,6 +1,5 @@
 package com.globant.university.dto;
 
-public record CreateUniversityRequestDTO() {
-
-
-}
+public record CreateUniversityRequestDTO(
+        String name
+) {}

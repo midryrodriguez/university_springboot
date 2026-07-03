@@ -7,6 +7,6 @@ import java.util.List;
 public interface UniversityService {
     List<UniversityResponseDTO> findAll();
 
-    UniversityResponseDTO create(CreateUniversityRequestDTO createUniversityResponseDTO);
-}
 
+    UniversityResponseDTO create(CreateUniversityRequestDTO requestDTO) throws Exception;
+}
