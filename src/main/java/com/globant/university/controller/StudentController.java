@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/students")
 @RequiredArgsConstructor
@@ -19,5 +21,13 @@ public class StudentController {
     public ResponseEntity<StudentResponseDTO> create(@RequestBody CreateStudentRequestDTO requestDTO) throws Exception {
         StudentResponseDTO responseDTO = studentService.create(requestDTO);
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
+
     }
+    @GetMapping
+    public ResponseEntity<List<StudentResponseDTO>> findAll() {
+        List<StudentResponseDTO> studentList = studentService.findAll();
+        return ResponseEntity.ok(studentList);
+    }
+
+
 }

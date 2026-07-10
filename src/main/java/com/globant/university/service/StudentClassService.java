@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface StudentClassService {
     List<StudentClassResponseDTO> findAll();
-    StudentClassResponseDTO create(CreateStudentClassRequestDTO createStudentClassRequestDTO) throws Exception;
+
+    StudentClassResponseDTO create(CreateStudentClassRequestDTO requestDTO) throws Exception;
 }

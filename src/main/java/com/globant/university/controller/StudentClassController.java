@@ -1,11 +1,12 @@
 package com.globant.university.controller;
 
+import com.globant.university.dto.CreateStudentClassRequestDTO;
 import com.globant.university.dto.StudentClassResponseDTO;
 import com.globant.university.service.StudentClassService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +16,12 @@ import java.util.List;
 public class StudentClassController {
 
     private final StudentClassService studentClassService;
+
+    @PostMapping
+    public ResponseEntity<StudentClassResponseDTO> create(@RequestBody CreateStudentClassRequestDTO requestDTO) throws Exception {
+        StudentClassResponseDTO responseDTO = studentClassService.create(requestDTO);
+        return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
+    }
 
     @GetMapping("/getAll")
     public List<StudentClassResponseDTO> getAll(){
