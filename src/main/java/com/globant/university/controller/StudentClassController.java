@@ -27,4 +27,15 @@ public class StudentClassController {
     public List<StudentClassResponseDTO> getAll(){
         return studentClassService.findAll();
     }
+
+    @GetMapping("/getByClassId/{classId}")
+    public List<StudentClassResponseDTO> getByClassId(@PathVariable Integer classId) throws Exception {
+        return studentClassService.findByClassId(classId);
+    }
+
+    // Nuevo endpoint GET para buscar por estudiante
+    @GetMapping("/getByStudentId/{studentId}")
+    public List<StudentClassResponseDTO> getByStudentId(@PathVariable Integer studentId) throws Exception {
+        return studentClassService.findByStudentId(studentId);
+    }
 }

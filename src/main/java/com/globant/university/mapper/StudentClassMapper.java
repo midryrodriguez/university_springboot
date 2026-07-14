@@ -11,7 +11,9 @@ public class StudentClassMapper {
         return new StudentClassResponseDTO(
                 studentClass.getStudentClassId(),
                 studentClass.getStudent() != null ? studentClass.getStudent().getStudentId() : null,
+                studentClass.getStudent() != null ? studentClass.getStudent().getName() :null,
                 studentClass.getAclass() != null ? studentClass.getAclass().getClassId() : null,
+                studentClass.getAclass() !=null ? studentClass.getAclass().getName() : null,
                 studentClass.getEnrolledAt()
         );
     }
